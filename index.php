@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>PDF to Text Converter</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>PDF to Text Converter</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-<body>
-  <?php
-    include('html/header.html');
-  ?>
-  <br>
-  
-  <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
-    <input type = "file" name = "upload_file">
-    <button type = "submit" name = "submit">UPLOAD</button>
-  </form>
-  
-  <br>
-  <?php
-    include('html/footer.html');
-  ?>
-</body>
+    <body>
+        <?php
+        include('html/sidenav.html');
+        ?>
+
+        <?php
+        include('html/body.html');
+        ?>
+
+
+<!--        --><?php
+//        echo shell_exec("cd java && java hello");
+//        ?>
+    </body>
 
 </html>

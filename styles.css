@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+*{
+    font-family: 'EB Garamond', serif;
+}
+
+.sidenav{
+    background-color: black;
+    color: white;           /* White text colour */
+    height: 100%;           /* Height of the sidebar: full-height */
+    width: 380px;           /* Width of the sidebar */
+    position: fixed;        /* Fixed Sidebar (stay in place when scrolling) */
+    z-index: 1;             /* Stay on top of all the elements in the webpage */
+    top: 0;                 /* Stick to the top of the webpage */
+    left: 0;                /* Stick to the left of the webpage */
+    overflow-x: hidden;     /* Disable horizontal scroll */
+    padding-top: 20px;      /*  */
+}
+
+.sidenav .sidenav_text{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+}
+
+.sidenav .sidenav_text .description{
+    position: absolute;
+    top: 100px;
+}
+
+.sidenav .sidenav_text .creator{
+    position: absolute;
+    top: 500px;
+}
+
+.wrapper{
+    background: cornflowerblue;
+    color: white;
+    text-align: center;
+
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    top: 40%;
+    left: 45%;
+    transform: translate(10%,10%);
+}
