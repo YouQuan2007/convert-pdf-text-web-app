@@ -6,6 +6,7 @@ if (isset($_POST['submit'])){
   $fileName = $_FILES['upload_file']['name'];
   $fileTmpName = $_FILES['upload_file']['tmp_name'];
   $fileSize = $_FILES['upload_file']['size'];
+  $fileError = $_FILES['upload_file']['error'];
 
   # Get the name and extension of the file
   $fileExt = explode(".", $fileName);
@@ -14,17 +15,22 @@ if (isset($_POST['submit'])){
   $fileActualExt = end($fileExt);
 
   if($fileActualExt == 'pdf'){
-    if ($fileSize < 1000000){
-        # 1000000kb = 1000mb
+    if($fileError == 0){
+      if ($fileSize < 100000){
+        # 100000kb = 100mb
         $fileNameNew = uniqid('', true)."."."$fileActualExt";  # create an unique id for the file to prevent overwritten by the same file name
-        $fileDestination = 'uploads/'.$fileNameNew;
+        $fileDestination = 'uploads/'.$fileName;
         move_uploaded_file($fileTmpName, $fileDestination);
-        header("Location: index.php?uploadsuccess");
-        echo"upload success";
+        header("Location: ?uploadsuccess");
+      }
+      else{
+          echo "The file is too big!";
+      }
     }
     else{
-        echo "The file is too big!";
+      echo "There was an error uploading your file!";
     }
+    
   }
   else {
       echo "Wrong file type! Please upload pdf.";

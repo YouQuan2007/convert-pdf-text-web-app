@@ -17,9 +17,9 @@
         ?>
 
 
-<!--        --><?php
+      <!-- <?php
 //        echo shell_exec("cd java && java hello");
-//        ?>
+//        ?> -->
     </body>
 
 </html>

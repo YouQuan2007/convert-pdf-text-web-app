@@ -14,7 +14,7 @@
     top: 0;                 /* Stick to the top of the webpage */
     left: 0;                /* Stick to the left of the webpage */
     overflow-x: hidden;     /* Disable horizontal scroll */
-    padding-top: 20px;      /*  */
+    padding-top: 20px;
 }
 
 .sidenav .sidenav_text{
