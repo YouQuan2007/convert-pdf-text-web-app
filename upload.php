@@ -16,10 +16,10 @@ if (isset($_POST['submit'])){
 
   if($fileActualExt == 'pdf'){
     if($fileError == 0){
-      if ($fileSize < 100000){
-        # 100000kb = 100mb
+      if ($fileSize < 1000000){
+        # 1000000kb = 1000mb
         $fileNameNew = uniqid('', true)."."."$fileActualExt";  # create an unique id for the file to prevent overwritten by the same file name
-        $fileDestination = 'uploads/'.$fileName;
+        $fileDestination = 'uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
         header("Location: ?uploadsuccess");
       }
