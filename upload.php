@@ -22,6 +22,7 @@ if (isset($_POST['submit'])){
         $fileDestination = 'uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
         header("Location: ?uploadsuccess");
+        echo shell_exec("cd /var/www/cat-assign/java/" && "javac convert_text.java && java convert_text");
       }
       else{
           echo "The file is too big!";
@@ -36,4 +37,3 @@ if (isset($_POST['submit'])){
       echo "Wrong file type! Please upload pdf.";
   }
 }
-?>

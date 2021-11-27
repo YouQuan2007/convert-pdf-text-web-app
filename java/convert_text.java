@@ -9,6 +9,7 @@ import org.junit.Test;
 public class convert_text {
   @Test
   public void ReadPDFFile() throws Exception {
+    System.out.println("Hello");
       File file= new File("/var/www/cat-assign/uploads");
       FileInputStream fis= new FileInputStream(file);
 
@@ -20,5 +21,8 @@ public class convert_text {
 
       pdfDocument.close();
       fis.close();
+  }
+  public void main(){
+    ReadPDFFile();
   }
 }
