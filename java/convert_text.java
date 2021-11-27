@@ -10,13 +10,9 @@ public class PdfExtractor{
       File pdfFile = new File ();
       System.out.println("Hello World");
 
-      PDDocument pdDocument = PDDocument.load(pdfFile);
-      PDFTextStripper pdfStripper = new PDFTextStripper();
-      String text= pdfStripper.getText(pdDocument);
-      System.out.println(text);
-    }
-    catch(Exception e){
-      e.printStackTrace();
-    }
+
+      pdfDocument.close();
+      fis.close();
+
   }
 }
