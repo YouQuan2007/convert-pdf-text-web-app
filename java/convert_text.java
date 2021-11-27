@@ -22,7 +22,4 @@ public class convert_text {
       pdfDocument.close();
       fis.close();
   }
-  public void main(){
-    ReadPDFFile();
-  }
 }
