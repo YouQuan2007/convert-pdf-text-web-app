@@ -4,12 +4,17 @@
 <head>
   <meta charset="utf-8">
   <title>PDF to Text Converter</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
   <link rel='stylesheet' type='text/css' href='css/style.php' />
 </head>
 
 <body>
-  <?php include('html/sidenav.html'); ?>
+  <?php
+  include('html/sidenav.html');
+  // echo shell_exec("javac java/convert_text.java && java java/convert_text.java $_SERVER[REQUEST_URI]");
+  // die();
+  ?>
+
 
   <div class="wrapper">
     <div class="title">
@@ -33,14 +38,13 @@
     echo "<p class='error'>There was an error uploading your file!</p>";
   } elseif (strpos($url, "invalidtype")) {
     echo "<p class='error'>Wrong file type! Please upload pdf.</p>";
-  } elseif (strpos($url, "uploadsuccess")) {
+  } elseif (strpos($url, "upload")) {
     echo "<p class='success'>PDF Upload successful!</p>";
+    $query = explode("upload=", $_SERVER[QUERY_STRING]);
+    $file = end($query);
+    echo exec("cd 'var/www/convert-pdf-text-web-app/java' && javac convert_text.java && java convert_text $file");
   }
   ?>
-
-  <!-- <?php
-        echo shell_exec("cd /var/www/cat-assign/java/ && javac convert_text.java && java convert_text");
-        ?> -->
 </body>
 
 </html>
