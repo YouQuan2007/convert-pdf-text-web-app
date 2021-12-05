@@ -11,13 +11,10 @@
 <body>
   <?php
   include('html/sidenav.html');
-  // echo shell_exec("javac java/convert_text.java && java java/convert_text.java $_SERVER[REQUEST_URI]");
-  // die();
   ?>
 
-
   <div class="wrapper">
-    <div class="title">
+    <div class="upload_file_title">
       Upload File
     </div>
     <div class="upload_pdf">
@@ -25,6 +22,11 @@
         <input type="file" name="upload_file">
         <button type="submit" name="submit">UPLOAD</button>
       </form>
+    </div>
+    <div class="download_text">
+      <?php
+      echo "<a href='index.php?download=$file.txt'>Download TEXT file</a>";
+      ?>
     </div>
   </div>
 
@@ -40,9 +42,24 @@
     echo "<p class='error'>Wrong file type! Please upload pdf.</p>";
   } elseif (strpos($url, "upload")) {
     echo "<p class='success'>PDF Upload successful!</p>";
-    $query = explode("upload=", $_SERVER[QUERY_STRING]);
-    $file = end($query);
-    echo exec("cd 'var/www/convert-pdf-text-web-app/java' && javac convert_text.java && java convert_text $file");
+    $file = $_GET['upload'];
+    echo shell_exec("cd java && javac -cp '.:/usr/share/java/*' ConvertText.java && java -cp '.:/usr/share/java/*' ConvertText $file.pdf");
+    header("Location: index.php?download=$file.txt");
+  }
+
+  if (!empty($_GET['download'])) {
+    $txtName = basename($_GET['download']);
+    $txtPath = 'text/' . $txtName;
+    if (!empty($txtName) && file_exists($txtPath)) {
+      header("Cache-Control: public");
+      header("Content-Description: File Transfer");
+      header("Content-Disposition: attachement; filename = $txtName");;
+      header("Content-Type: text/plain");
+      readfile($txtPath);
+      exit;
+    } else {
+      echo "<p class='error'>The file does not exist.</p>";
+    }
   }
   ?>
 </body>
