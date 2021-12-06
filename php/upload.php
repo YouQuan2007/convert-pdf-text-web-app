@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         if ($fileSize < 1000000) {
           # max size is 1GB
           $fileNewName = uniqid('');  # create an unique id for the file to prevent overwritten by the same file name
-          $fileDestination = '../uploads/' . $fileNewName . ".$fileExt";
+          $fileDestination = "../uploads/$fileNewName.$fileExt";
           move_uploaded_file($fileTmpName, $fileDestination);
           header("Location: ../index.php?upload=$fileNewName");
         } else {
