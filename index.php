@@ -45,10 +45,10 @@
       if (file_exists($textPath)) {
         echo "<a href='$textPath' download>Download TEXT file</a>";
       } else {
-        echo "<p class = 'error'>Fail to convert \"$file.pdf\" to text file.</p>";
+        echo "<p class = 'error'>Fail to convert to text file.</p>";
       }
     } else
-      echo "<p class = 'error'>No such PDF with the name \"$file.pdf\" is uploded.</p>";
+      echo "<p class = 'error'>No such PDF is uploded.</p>";
   }
   ?>
 </body>
