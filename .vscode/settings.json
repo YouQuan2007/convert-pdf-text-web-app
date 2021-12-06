@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": [
+    "java"
+  ],
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/usr/share/java/pdfbox2-2.0.18.jar"
+  ]
+}

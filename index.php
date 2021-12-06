@@ -11,13 +11,10 @@
 <body>
   <?php
   include('html/sidenav.html');
-  // echo shell_exec("javac java/convert_text.java && java java/convert_text.java $_SERVER[REQUEST_URI]");
-  // die();
   ?>
 
-
   <div class="wrapper">
-    <div class="title">
+    <div class="upload_file_title">
       Upload File
     </div>
     <div class="upload_pdf">
@@ -40,9 +37,18 @@
     echo "<p class='error'>Wrong file type! Please upload pdf.</p>";
   } elseif (strpos($url, "upload")) {
     echo "<p class='success'>PDF Upload successful!</p>";
-    $query = explode("upload=", $_SERVER[QUERY_STRING]);
-    $file = end($query);
-    echo exec("cd 'var/www/convert-pdf-text-web-app/java' && javac convert_text.java && java convert_text $file");
+    $file = $_GET['upload'];
+    $filePath = "uploads/$file.pdf";
+    if (file_exists($filePath)) {
+      echo shell_exec("cd java && javac -cp '.:/usr/share/java/*' ConvertText.java && java -cp '.:/usr/share/java/*' ConvertText $file.pdf");
+      $textPath = "text/$file.txt";
+      if (file_exists($textPath)) {
+        echo "<a href='$textPath' download>Download TEXT file</a>";
+      } else {
+        echo "<p class = 'error'>Fail to convert to text file.</p>";
+      }
+    } else
+      echo "<p class = 'error'>No such PDF is uploded.</p>";
   }
   ?>
 </body>
