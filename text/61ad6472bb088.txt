@@ -1,0 +1,37 @@
+ 
+School of Computer Sciences 
+ 
+CAT201 Integrated Software 
+Development Workshop 
+    
+ASSIGNMENT I : Integrated Software Development Workshop  2021/2022  
+Objectives  
+This assignment evaluates a student ability in web platform development. 
+Specification  
+Download and/or setup a Linux Apache webserver inside a Docker container. 
+You can download preconfigured container image such as Ubuntu docker 
+image (https://hub.docker.com/_/ubuntu). Create a web application to allow 
+users to convert a .pdf file to .txt file using Java PDFBox library 
+(https://pdfbox.apache.org/). The web pages/forms should not be created using 
+WYSIWYG text editor or from ready-made template. 
+Mark distribution: 
+Web server setup in a Docker container: 25% 
+GUI (HTML+CSS): 30% 
+Sending file to server and retrieval of TXT through a link: 25% 
+Convert PDF to TXT in server: 20% 
+ 
+Due Date: 19 December 2021 
+ 
+Submission format 
+All codes (HTML, CSS, PHP, Java and scripts) + 5 mins (max) video recording 
+of running the web application. Starting from the webserver, entering inputs and 
+retrieving the inputs. 
+Notes 
+This assignment is to be done by 3-4 students in a group. Any part of the 
+program submitted by a student/group for the evaluation must not be 
+shared with another student/group. Anyone caught copying or let his/her 
+program to be copied will automatically get zero mark for the assignment. 
+References taken from any sources must be quoted and declared. Codes 
+copy from the Internet will not be given any marks. Group members that 
+do not contribute will get zero. 
+ 
