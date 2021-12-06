@@ -23,11 +23,6 @@
         <button type="submit" name="submit">UPLOAD</button>
       </form>
     </div>
-    <div class="download_text">
-      <?php
-      // echo "<a href='index.php?download=$file.txt'>Download TEXT file</a>";
-      ?>
-    </div>
   </div>
 
   <?php
