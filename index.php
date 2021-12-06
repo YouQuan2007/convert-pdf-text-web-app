@@ -25,7 +25,7 @@
     </div>
     <div class="download_text">
       <?php
-      echo "<a href='index.php?download=$file.txt'>Download TEXT file</a>";
+      // echo "<a href='index.php?download=$file.txt'>Download TEXT file</a>";
       ?>
     </div>
   </div>
@@ -44,7 +44,7 @@
     echo "<p class='success'>PDF Upload successful!</p>";
     $file = $_GET['upload'];
     echo shell_exec("cd java && javac -cp '.:/usr/share/java/*' ConvertText.java && java -cp '.:/usr/share/java/*' ConvertText $file.pdf");
-    header("Location: index.php?download=$file.txt");
+    echo "<a href='index.php?download=$file.txt'>Download TEXT file</a>";
   }
 
   if (!empty($_GET['download'])) {
