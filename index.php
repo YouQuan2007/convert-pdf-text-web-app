@@ -43,23 +43,17 @@
   } elseif (strpos($url, "upload")) {
     echo "<p class='success'>PDF Upload successful!</p>";
     $file = $_GET['upload'];
-    echo shell_exec("cd java && javac -cp '.:/usr/share/java/*' ConvertText.java && java -cp '.:/usr/share/java/*' ConvertText $file.pdf");
-    echo "<a href='index.php?download=$file.txt'>Download TEXT file</a>";
-  }
-
-  if (!empty($_GET['download'])) {
-    $txtName = basename($_GET['download']);
-    $txtPath = 'text/' . $txtName;
-    if (!empty($txtName) && file_exists($txtPath)) {
-      header("Cache-Control: public");
-      header("Content-Description: File Transfer");
-      header("Content-Disposition: attachement; filename = $txtName");;
-      header("Content-Type: text/plain");
-      readfile($txtPath);
-      exit;
-    } else {
-      echo "<p class='error'>The file does not exist.</p>";
-    }
+    $filePath = "uploads/$file.pdf";
+    if (file_exists($filePath)) {
+      echo shell_exec("cd java && javac -cp '.:/usr/share/java/*' ConvertText.java && java -cp '.:/usr/share/java/*' ConvertText $file.pdf");
+      $textPath = "text/$file.txt";
+      if (file_exists($textPath)) {
+        echo "<a href='$textPath' download>Download TEXT file</a>";
+      } else {
+        echo "<p class = 'error'>Fail to convert \"$file.pdf\" to text file.</p>";
+      }
+    } else
+      echo "<p class = 'error'>No such PDF with the name \"$file.pdf\" is uploded.</p>";
   }
   ?>
 </body>
