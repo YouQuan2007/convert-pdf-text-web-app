@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>PDF to Text Converter</title>
+  <link rel='stylesheet' type='text/css' href='assets/css/style.css' />
   <link rel='stylesheet' type='text/css' href='assets/style.php' />
   <div class="header">
 
