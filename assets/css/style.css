@@ -1,10 +1,12 @@
+head,body,footer{
+  width:1500px;
+
+}
 /*Header */
 .header{
     display: inline-block;
     align-items: center;
     text-align:right;
-    
-    
     }
     .pgtitle{
     position:center;
@@ -15,7 +17,7 @@
     left: 50%;
     color: white;
     }
-    
+ 
     body,html{
     height:100%;
     }
@@ -32,7 +34,7 @@
     z-index: -1;
     }
     
-    @media (max-width: 750px) {
+    @media (max-width: 700px) {
     #background-video { display: none; }
     body {
     /* The image used */
@@ -61,6 +63,7 @@
     border-color:black;
     margin-bottom:5%;
     margin-left: 5%;
+
     padding: 20px 12px;
     box-sizing: border-box;
     width: 700px;
@@ -68,6 +71,7 @@
     justify-content: center;
     
     background: rgba(255, 243, 243,0.75);
+
     }
     .Home2{
     flex-basis:31%;
@@ -82,6 +86,7 @@
     
     justify-content: center;
     background: rgba(232, 244, 248,0.75);
+   
     }
     
     .Home:hover{
@@ -100,6 +105,7 @@
     color: white;
     text-align: center;
     box-sizing: border-box;
+    border-radius: 20px;
     position: absolute;
     width: 500px;
     height: 100px;
@@ -107,8 +113,8 @@
     left: 45%;
     transform: translate(10%,10%);
     justify-content: space-between;
-    margin: 35px 70px;
-    
+    margin-left:10%;
+
     }
     .wrapper:hover{
     background: orange;
@@ -117,20 +123,24 @@
     .upload_file_title{
     font-size: 30px;
     }
-
+    .wrap {
+        width: 95%;
+        min-width: 900px;
+   }
     footer {
-        animation: popout 1s ease-in-out;
-        margin: auto;
+      animation: popout 1s ease-in-out; 
         width: 100%;
-        padding: 5px 20px;
+
         background-color: black;
         color: white;
         text-align: center;
         font-size: 20px;
         }
         
-        @keyframes popout {
+ @keyframes popout {
         from{transform:scale(0)}
         80%{transform:scale(1.1)}
         to{transform:scale(1)}
-        }
+       
+ }
+
