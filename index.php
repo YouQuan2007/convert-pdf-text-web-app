@@ -8,10 +8,12 @@
   <link rel='stylesheet' type='text/css' href='assets/style.php' />
   <div class="header">
 
-    <div class="pgtitle">
+
+  <div class="pgtitle">
       <h1>PDF TO TEXT CONVERTER</h1>
     </div>
   </div>
+
   <div class="header">
 
     <div class="logo">
@@ -19,6 +21,7 @@
     </div>
 
   </div>
+
 </head>
 
 <body>
@@ -38,6 +41,7 @@
     </p>
   </div>
 
+
   <div class="Home2">
     <p><b> How to use this tool? </b></p>
     <ol>
@@ -48,16 +52,15 @@
         <li>Click the "Download TEXT file" link generated to save/download your txt file.</li>
     </ol>
     </p>
-
   </div>
 
-  </div>
 
   <div class="wrapper">
 
     <div class="upload_file_title">
       <b> Upload File </b>
     </div>
+
     <div class="upload_pdf">
       <form action="php/upload.php" method="POST" enctype="multipart/form-data">
         <input type="file" name="upload_file">
@@ -65,6 +68,12 @@
       </form>
     </div>
 
+
+
+   
+
+
+  
     <?php
     $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     if (strpos($url, "empty")) {
@@ -92,10 +101,12 @@
     }
     ?>
   </div>
+
 </body>
 
 
 <footer>
+
   <h3>Created by:</h3>
   <p style="margin-bottom: 2em">
     1. Loh Wan Teng (149104)<br>

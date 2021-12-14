@@ -12,6 +12,8 @@ position: absolute;
 width: 500px;
 height: 30px;
 transform: translate(10%,10%);
+border-radius: 0 0 20px 20px;
+box-sizing: border-box;
 }
 
 .success{
@@ -22,5 +24,6 @@ position: absolute;
 width: 500px;
 height: 30px;
 transform: translate(10%,10%);
+border-radius: 0 0 20px 20px;
 }
 
